@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Property Recommendation in Texas USA. Group#9 Jorge,Omar,Chisom,Muhammad</title>
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin="" />
+
+<!-- Leaflet JavaScript code -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+<!-- jchar -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Our CSS -->
+<link rel="stylesheet" type="text/css" href="./static/style.css">
+<script src="https://d3js.org/d3.v7.min.js"
+crossorigin=""></script>
+<style>
+    /* CSS styles for highlighting on hover */
+    .highlight {
+      background-color: yellow;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+    <div class=" container">
+        <nav>
+            
+            <div class="search-container">
+                <script>
+                    function openAPI(apiUrl) {
+                      window.open(apiUrl, '_blank');
+                    }
+                  </script>
+                <button onclick="openAPI('/api.html')">List of Api's</button>
+             <!-- Bedrooms Selector -->
+            <label for="bedrooms">Select Bedrooms:</label>
+            <select id="bedrooms">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <!-- Zipcodes Selector -->
+            <label for="zipcodes">Select Zipcodes:</label>
+            <select id="zipcodes">
+                <!-- Options will be populated dynamically -->
+            </select>
+            </div>
+        </nav>
+        <div class="details-container" id="propertyInfo">
+            <div id="propertyInfo"></div>
+        </div>
+        <div id="chart">
+            <canvas id="salePriceChart" width="10" height="10"></canvas>
+            <!-- <div id="salePriceChart" style="height: 300px; width: 400px;"></div> Div for the chart -->
+        </div>
+        <div id="amenities">
+            <div id=""amenties-container">
+                <div class="titles"><h5>Parks</h5>
+                    <div id="parkList"></div>
+                </div>
+                <div class="titles"><h5>Schools</h5>
+                    <div id="schoolList"></div>
+                </div>
+                <div class="titles"><h5>Grocery Stores</h5>
+                    <div id="groceryList"></div>
+                </div>
+                <div class="titles"><h5>Restuarants</h5>
+                    <div id="RestuList"></div>
+                </div>
+                <div class="titles"><h5>Gyms</h5>
+                    <div id="GymList"></div>
+                </div>
+                <div class="titles"><h5>Public Transport</h5>
+                    <div id="TransportList"></div>
+                </div>
+            </div>
+        </div>
+        <div id="map">Area Map</div>
+        <div id="recommendations">Recommendations</div>
+        <!-- Side bar customization -->
+        <div id="sideBar">
+            
+            <div id="result-box">
+                <div class="results-container" id="results">
+                        <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </div>
+    <script src="./static/logic.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+</body>
+
+</html>
