@@ -3,25 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>Pre assesment form</title>
 </head>
 <body>
-  <button onclick="openAPI('/api.html')">List of APIs</button>
-  <button onclick="openForm('/form.html')">Pre assesment form</button>
-  <script>
-    function openAPI(apiUrl) {
-      window.open(apiUrl, '_blank', 'width=600,height=400');
-    }
-  
-  function openForm(formUrl) {
-    window.open(formUrl, '_self', 'width=600,height=400');
-  }
-  </script>
+
   
 
 
-------------
-<!-- <h2>User Input Form</h2>
+<!-- ------------ -->
+<h2>Pre assesment form</h2>
 
   <form id="dataForm">
     <label for="firstName">First Name:</label>
@@ -37,16 +27,16 @@
     <input type="text" id="jobType" name="jobType" required><br>
 
     <label>Own Property:</label>
-    <input type="radio" name="ownProperty" value="Yes"> Yes
-    <input type="radio" name="ownProperty" value="No" checked> No <br>
+    <input type="radio" name="ownProperty" value="1"> Yes
+    <input type="radio" name="ownProperty" value="0" checked> No <br>
 
     <label>Own Mobile Phone:</label>
-    <input type="radio" name="FLAG_MOBIL" value="Yes"> Yes
-    <input type="radio" name="FLAG_MOBIL" value="No" checked> No <br>
+    <input type="radio" name="FLAG_MOBIL" value="1"> Yes
+    <input type="radio" name="FLAG_MOBIL" value="0" checked> No <br>
 
     <label>Own Car:</label>
-    <input type="radio" name="FLAG_OWN_CAR" value="Yes"> Yes
-    <input type="radio" name="FLAG_OWN_CAR" value="No" checked> No <br>
+    <input type="radio" name="FLAG_OWN_CAR" value="1"> Yes
+    <input type="radio" name="FLAG_OWN_CAR" value="0" checked> No <br>
 
     <label>Marital Status:</label>
     <input type="radio" name="maritalStatus" value="Married"> Married
@@ -95,6 +85,6 @@
       })
       .catch(error => console.error('Error:', error));
     }
-  </script> -->
+  </script>
 </body>
 </html>
