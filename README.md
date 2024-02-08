@@ -2,7 +2,7 @@
 Bootcamp Project 4- Project Title: Analyzing Home Credit Default Risk
 
 # Introduction
-This Project was conducted b 4 group members in the Data Analytics Bootcamp with the University of Toronto School of Continus Studies. The group members are Lovepreet Singh, Kashif Muhammad, Vinay Vattipally and Audrey Nkrumah.
+This Project was conducted b 4 group members in the Data Analytics Bootcamp with the University of Toronto School of Continus Studies. The group members are Lovepreet Singh, Muhammad Kashif, Vinay Vattipally and Audrey Nkrumah.
 
 Introduction to the Home Credit Default Risk dataset.
 
@@ -34,9 +34,9 @@ The objective of the project is to :
 
 # Data Understanding
 
-Description of the dataset: features, target variable, etc.
-Data source and acquisition process.
-Data is acquired from Kaggle.com provided by Home credit Group.
+Description of the dataset: features, target variable, etc.<br>
+#### Data source and acquisition process.<br>
+Data is acquired from Kaggle.com provided by Home credit Group.<br>
 Data contains files:
 <ul>
         <li>application_{train|test}.csv</li>
@@ -48,13 +48,14 @@ Data contains files:
         <li>installments_payments.csv</li>
         <li>HomeCredit_columns_description.csv</li>     
 </ul>
-Data preprocessing steps:<br>
-Handling missing values.<br>
+
+### Data preprocessing steps:<br>
+#### Handling missing values.<br>
 Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
 However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.<br>
-Data cleaning and formatting.<br>
+#### Data cleaning and formatting.<br>
 After Initial cleaning and handling of missing values, CSV files are exported.<br>
-Connect to Sources(APIs):<br>
+#### Connect to Sources(APIs):<br>
 APIs are created using Database queries, Final schema file is used to create tables in Postgresql. Tables are populated with data by using postgresqlpop.ipynb file which have functions to insert data in the database from CSV files.<br>
 app.py file has query setup to obtain data from Postgresql via APIs. <br>
 below is list of APIs:<br>
@@ -67,7 +68,8 @@ below is list of APIs:<br>
        <li> "Previous_application" : 'http://127.0.0.1:5000/previous_application'</li>
         <li>"Application_train" : 'http://127.0.0.1:5000/application_train'</li>
 </ul>
-Data Retrieval from APIs:<br>
+
+#### Data Retrieval from APIs:<br>
 Data is extracted from API and tables are merged together using get_data_from_api.ipynb file.<br>
 Data is then used for modelling process and Data analysis.<br>
 Exploratory Data Analysis (EDA):
