@@ -36,9 +36,40 @@ The objective of the project is to :
 
 Description of the dataset: features, target variable, etc.
 Data source and acquisition process.
-Data preprocessing steps:
-Handling missing values.
-Data cleaning and formatting.
+Data is acquired from Kaggle.com provided by Home credit Group.
+Data contains files:
+<ul>
+        <li>application_{train|test}.csv</li>
+        <li>bureau.csv</li>
+        <li>bureau_balance.csv</li>
+        <li>POS_CASH_balance.csv</li>
+        <li>credit_card_balance.csv</li>
+        <li>previous_application.csv</li>
+        <li>installments_payments.csv</li>
+        <li>HomeCredit_columns_description.csv</li>     
+</ul>
+Data preprocessing steps:<br>
+Handling missing values.<br>
+Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
+However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.<br>
+Data cleaning and formatting.<br>
+After Initial cleaning and handling of missing values, CSV files are exported.<br>
+Connect to Sources(APIs):<br>
+APIs are created using Database queries, Final schema file is used to create tables in Postgresql. Tables are populated with data by using postgresqlpop.ipynb file which have functions to insert data in the database from CSV files.<br>
+app.py file has query setup to obtain data from Postgresql via APIs. <br>
+below is list of APIs:<br>
+<ul>
+        <li>"Bureau" : 'http://127.0.0.1:5000/bureau'</li>
+       <li>"Bureau_balance" : 'http://127.0.0.1:5000/bureau_balance'</li>
+        <li>"Credit_card_balance" : 'http://127.0.0.1:5000/credit_card_balance'</li>
+        <li>"Installments_payments" : 'http://127.0.0.1:5000/installments_payments'</li>
+       <li>"POS_CASH_balance" : 'http://127.0.0.1:5000/pOS_CASH_balance',</li>
+       <li> "Previous_application" : 'http://127.0.0.1:5000/previous_application'</li>
+        <li>"Application_train" : 'http://127.0.0.1:5000/application_train'</li>
+</ul>
+Data Retrieval from APIs:<br>
+Data is extracted from API and tables are merged together using get_data_from_api.ipynb file.<br>
+Data is then used for modelling process and Data analysis.<br>
 Exploratory Data Analysis (EDA):
 Summary statistics.
 Data visualization (histograms, box plots, correlation matrices, etc.).
