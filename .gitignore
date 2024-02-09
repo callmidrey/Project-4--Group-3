@@ -1,0 +1,16 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore logs
+*.log
+
+# Ignore temporary files or directories
+__pycache__
+.temp/
+
+# Ignore large files and directories
+model_amount.joblib
+large_data/
+
+# Ignore environment-specific files
+.env
