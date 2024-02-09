@@ -1,0 +1,42 @@
+/* static/style.css */
+body {
+    background: linear-gradient(to bottom, #001F3F, #00102B); /* Navy blue fading effect */
+    color: white; /* Text color */
+    font-family: Arial, sans-serif; /* Specify your preferred font-family */
+}
+
+form {
+    width: 50%;
+    margin: 0 auto; /* Center the form */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark navy blue background with 70% opacity */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Add a subtle white shadow */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    border-radius: 5px; /* Rounded corners for input boxes */
+}
+
+button {
+    background-color: #007BFF; /* Blue color for the submit button */
+    color: white;
+    padding: 10px 15px; /* Adjust padding for a closer fit to the text */
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
