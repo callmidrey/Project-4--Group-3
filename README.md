@@ -76,20 +76,34 @@ Exploratory Data Analysis (EDA):
 Summary statistics.
 Data visualization (histograms, box plots, correlation matrices, etc.).
 
-# Feature Engineering
+#### Feature Engineering
 Creation of new features (if applicable).
-Feature selection techniques.
 Encoding categorical variables.
+Feature selection techniques.
 Scaling and normalization of numerical features.
 
-# Model Building
-Selection of appropriate machine learning algorithms:
-Logistic Regression/ Random Forest
+#### Model Building
+1. Model accuracy & probability
 Splitting the dataset into training and testing sets.
-Model training and evaluation:
-Cross-validation techniques.
+Selection of appropriate machine learning algorithms: Random Forest Classifier. 
+Model training and evaluation.
 Performance metrics (accuracy, precision, recall, F1-score, etc.).
+![Alt text](image-2.png)
 Hyperparameter tuning.
+Choosing top contributing factors in model and testing model accuracy again.
+![Alt text](image-3.png)
+
+2. Model prediction
+Splitting the dataset into training and testing sets.
+Selection of appropriate machine learning algorithms: Random Forest Regressor, XG Boost, Lasso Regression and Neural Network Regression.
+Model training and evaluation.
+Performance metrics (accuracy, precision, recall, F1-score, etc.).
+![Alt text](image-1.png)
+Hyperparameter tuning.
+
+#### Website Building
+
+ 
 
 # Results and Discussion
 Presentation of the model evaluation results.
