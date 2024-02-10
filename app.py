@@ -12,9 +12,9 @@ import requests
 app = Flask(__name__)
 
 # Configure PostgreSQL connection
-DB_NAME = 'Project4'
+DB_NAME = 'project4'
 DB_USER = 'postgres'
-DB_PASSWORD = 'Subhan786!'
+DB_PASSWORD = 'postgres'
 DB_HOST = '127.0.0.1'
 DB_PORT = '5432'
 
@@ -86,9 +86,9 @@ def InstallmentPayment():
         return jsonify(data)
     else:
         return jsonify({'error': data}), 500
-@app.route('/pOS_CASH_balance', methods=['GET'])
+@app.route('/pos_cash_balance', methods=['GET'])
 def PosCashBalance():
-    query = 'SELECT * From "pOS_CASH_balance" LIMIT 99999;'
+    query = 'SELECT * From "pos_cash_balance" LIMIT 99999;'
     data = fetch_data(query)
     if isinstance(data, list):
         return jsonify(data)
@@ -105,7 +105,7 @@ def previousApplication():
         return jsonify({'error': data}), 500
 @app.route('/application_train', methods=['GET'])
 def applicationTrain():
-    query = 'SELECT * From "Application_train" LIMIT 99999;'
+    query = 'SELECT * From "application_train" LIMIT 99999;'
     data = fetch_data(query)
     if isinstance(data, list):
         return jsonify(data)
@@ -143,9 +143,9 @@ def create_table():
 # Call the create_table function to ensure the table is created when the application starts
 create_table()
 
-@app.route('/form.html')
+@app.route('/pre_evaluation.html')
 def form():
-    return render_template('form.html')
+    return render_template('pre_evaluation.html')
 
 @app.route('/submitData', methods=['POST'])
 def submit_data():
@@ -221,7 +221,7 @@ def get_last_row():
         return jsonify({'error': str(e)})
     
 # Load the machine learning model
-model = joblib.load('model1.joblib')
+model = joblib.load('model_probability.joblib')
 
 # API endpoint to get input data
 INPUT_DATA_API_ENDPOINT = 'http://127.0.0.1:5000/getLastRow'
@@ -238,14 +238,37 @@ def run_model():
         input_data = input_data_response.json()
 
         # Create a DataFrame with feature names
+                    
         features = pd.DataFrame({
-            'AMT_INCOME_TOTAL': [input_data["AMT_INCOME_TOTAL"]],
-            'FLAG_MOBIL': [input_data["FLAG_MOBIL"]],
-            'FLAG_OWN_CAR': [input_data["FLAG_OWN_CAR"]]
+            "DAYS_ID_PUBLISH": [input_data['DAYS_ID_PUBLISH']],
+            "DAYS_BIRTH": [input_data['DAYS_BIRTH']],
+            "DAYS_REGISTRATION": [input_data['DAYS_REGISTRATION']],
+            "DAYS_LAST_PHONE_CHANGE": [input_data['DAYS_LAST_PHONE_CHANGE']],
+            "AMT_ANNUITY_x": [input_data['AMT_ANNUITY_x']],
+            "SK_ID_CURR": [input_data['SK_ID_CURR']],
+            "DAYS_EMPLOYED": [input_data['DAYS_EMPLOYED']],
+            "AMT_GOODS_PRICE": [input_data['AMT_GOODS_PRICE']],
+            "AMT_INCOME_TOTAL": [input_data['AMT_INCOME_TOTAL']],
+            "HOUR_APPR_PROCESS_START": [input_data['HOUR_APPR_PROCESS_START']],
+            "AMT_REQ_CREDIT_BUREAU_YEAR": [input_data['AMT_REQ_CREDIT_BUREAU_YEAR']],
+            "OWN_CAR_AGE": [input_data['OWN_CAR_AGE']],
+            "OBS_30_CNT_SOCIAL_CIRCLE": [input_data['OBS_30_CNT_SOCIAL_CIRCLE']],
+            "OBS_60_CNT_SOCIAL_CIRCLE": [input_data['OBS_60_CNT_SOCIAL_CIRCLE']],
+            "AMT_PAYMENT": [input_data['AMT_PAYMENT']],
+            "DAYS_ENTRY_PAYMENT": [input_data['DAYS_ENTRY_PAYMENT']],
+            "AMT_INSTALMENT": [input_data['AMT_INSTALMENT']],
+            "DAYS_INSTALMENT": [input_data['DAYS_INSTALMENT']],
+            "NUM_INSTALMENT_NUMBER": [input_data['NUM_INSTALMENT_NUMBER']],
+            "CNT_INSTALMENT_FUTURE": [input_data['CNT_INSTALMENT_FUTURE']],
+            "MONTHS_BALANCE_x": [input_data['MONTHS_BALANCE_x']],
+            "CNT_FAM_MEMBERS": [input_data['CNT_FAM_MEMBERS']],
+            "CNT_INSTALMENT": [input_data['CNT_INSTALMENT']],
+            "CNT_INSTALMENT_MATURE_CUM": [input_data['CNT_INSTALMENT_MATURE_CUM']],
+            "MONTHS_BALANCE_Credit_card_balance": [input_data['MONTHS_BALANCE_Credit_card_balance']]
         })
 
         # Assuming 'model' is a classifier (e.g., RandomForestClassifier)
-        probability_result = model.predict_proba(features)[:, 1]  # Extract the probability for class 1
+        probability_result = model.predict_proba(features)[:, 1]
 
         # Round the probability result to two decimal places
         probability_result_rounded = round(probability_result.item(), 2)

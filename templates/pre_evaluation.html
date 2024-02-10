@@ -1,0 +1,103 @@
+<!-- templates/pre_evaluation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Pre-Evaluation</title>
+<!-- Adjust the path based on your project structure -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Loan Prediction</h1>
+    
+        <nav>
+            <a href="{{ url_for('home') }}" class="nav-button">Home</a>
+            <a href="{{ url_for('pre_evaluation') }}" class="nav-button" >Pre-Evaluation Form</a>
+            </nav> 
+        
+        </header>
+    
+
+    <!--------------------------------- -->
+
+<h2>Pre assessment  form</h2>
+
+<form id = "dataForm"</h2>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br>
+
+    <label for="AMT_INCOME_TOTAL">Income:</label>
+    <input type="number" id="AMT_INCOME_TOTAL" name="AMT_INCOME_TOTAL" required><br>
+
+    <label for="jobType"> Job Type:</label>
+    <input tyupe="text" id="jobType" name="jobType" required><br>
+
+    <label for="Own Property">Own Property:</label>
+    <input type="radio" name="ownProperty" value="1">Yes
+    <input type="radio" name="ownProperty" value="0" checked>No<br>
+
+    <label for="Own Car">Own Car:</label>
+    <input type="radio" name="ownCar" value="1">Yes
+    <input type="radio" name="ownCar" value="0" checked>No<br>
+
+    <label for="Marital Status">Marital Status:</label>
+    <input type="radio" name="maritalStatus" value="Married">Married
+    <input type="radio" name="maritalStatus" value="Single" checked>Single<br>
+
+    <label for="Living Arrangement">Living Arrangement:</label>
+    <input type="radio" name="livingArrangement" value="With Family">With Family
+    <input type="radio" name="livingArrangement" value="Alone" checked>Alone<br>
+
+    <label for="Education">Education:</label>
+    <input type="text" id="education" name="education" required><br>
+
+    <label for="YearsExperience">Years of Experience:</label>
+    <input type="number" id="yearsExperience" name="yearsExperience" required><br>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<script>
+    function submitForm() {
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            AMT_INCOME_TOTAL: document.getElementById('AMT_INCOME_TOTAL').value,
+            jobType: document.getElementById('jobType').value,
+            ownProperty: document.querySelector('input[name="ownProperty"]:checked').value,
+            FLAG_MOBIL: document.querySelector('input[name="FLAG_MOBIL"]:checked').value,
+            FLAG_OWN_CAR: document.querySelector('input[name="FLAG_OWN_CAR"]:checked').value,
+            maritalStatus: document.querySelector('input[name="maritalStatus"]:checked').value,
+            livingArrangement: document.querySelector('input[name="livingArrangement"]:checked').value,
+            education: document.getElementById('education').value,
+            yearsExperience: document.getElementById('yearsExperience').value
+        };
+        fetch('/submitData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Data submitted successfully!');
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+
+    <header>
+    <h1>Loan Prediction</h1>
+
+    <nav>
+        <a href="{{ url_for('home') }}" class="nav-button">Home</a>
+        <a href="{{ url_for('pre_evaluation') }}" class="nav-button" >Pre-Evaluation Form</a>
+        </nav> 
+    
+    </header>
+
+    <section> 
+        <hr>
+        <h1>Welcome to the Loan Prediction Platform</h1>
+        <p>Our platform is designed to help you predict the likelihood of getting a loan based on your personal and financial information. 
+            Whether you're planning to buy a house, a car, or need a loan for personal reasons, our platform can help you assess your chances of getting a loan.
+
+        </p>
+
+        
+
+    </section>
+
+    <!-- <script src="{{ url_for('static', filename='app.js') }}"></script> -->
+</body>
+</html>
