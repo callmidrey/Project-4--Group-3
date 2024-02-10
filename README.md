@@ -36,8 +36,8 @@ The objective of the project is to :
 
 Description of the dataset: features, target variable, etc.<br>
 #### Data source and acquisition process.<br>
-Data is acquired from Kaggle.com provided by Home credit Group.<br>
-Data contains files:
+- Data is acquired from Kaggle.com provided by Home credit Group.<br>
+- Data contains files:
 <ul>
         <li>application_{train|test}.csv</li>
         <li>bureau.csv</li>
@@ -51,12 +51,12 @@ Data contains files:
 
 ### Data preprocessing steps:<br>
 #### Handling missing values.<br>
-Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
-However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.<br>
+- Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
+- However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.<br>
 #### Data cleaning and formatting.<br>
-After Initial cleaning and handling of missing values, CSV files are exported.<br>
+- After Initial cleaning and handling of missing values, CSV files are exported.<br>
 #### Connect to Sources(APIs):<br>
-APIs are created using Database queries, Final schema file is used to create tables in Postgresql. Tables are populated with data by using postgresqlpop.ipynb file which have functions to insert data in the database from CSV files.<br>
+- APIs are created using Database queries, Final schema file is used to create tables in Postgresql. Tables are populated with data by using postgresqlpop.ipynb file which have functions to insert data in the database from CSV files.<br>
 app.py file has query setup to obtain data from Postgresql via APIs. <br>
 below is list of APIs:<br>
 <ul>
@@ -70,58 +70,63 @@ below is list of APIs:<br>
 </ul>
 
 #### Data Retrieval from APIs:<br>
-Data is extracted from API and tables are merged together using get_data_from_api.ipynb file.<br>
-Data is then used for modelling process and Data analysis.<br>
-Exploratory Data Analysis (EDA):
-Summary statistics.
-Data visualization (histograms, box plots, correlation matrices, etc.).
+- Data is extracted from API and tables are merged together using get_data_from_api.ipynb file.
+- Data is then used for modelling process and Data analysis.
+- Exploratory Data Analysis (EDA).
+- Summary statistics.
+- Data visualization (histograms, box plots, correlation matrices, etc.).
 
 #### Feature Engineering
-Creation of new features (if applicable).
-Encoding categorical variables.
-Feature selection techniques.
-Scaling and normalization of numerical features.
+- Creation of new features (if applicable).
+- Encoding categorical variables.
+- Feature selection techniques.
+- Scaling and normalization of numerical features.
 
 #### Model Building
 1. Model accuracy & probability
-Splitting the dataset into training and testing sets.
-Selection of appropriate machine learning algorithms: Random Forest Classifier. 
-Model training and evaluation.
-Performance metrics (accuracy, precision, recall, F1-score, etc.).
+- Splitting the dataset into training and testing sets.
+- Selection of appropriate machine learning algorithms: Random Forest Classifier. 
+- Model training and evaluation.
+- Performance metrics (accuracy, precision, recall, F1-score, etc.).
+
 ![Alt text](image-2.png)
-Hyperparameter tuning.
-Choosing top contributing factors in model and testing model accuracy again.
+
+- Hyperparameter tuning.
+- Choosing top contributing features in model and testing model accuracy again.
+
 ![Alt text](image-3.png)
 
+
 2. Model prediction
-Splitting the dataset into training and testing sets.
-Selection of appropriate machine learning algorithms: Random Forest Regressor, XG Boost, Lasso Regression and Neural Network Regression.
-Model training and evaluation.
-Performance metrics (accuracy, precision, recall, F1-score, etc.).
+- Splitting the dataset into training and testing sets.
+- Selection of appropriate machine learning algorithms: Random Forest Regressor, XG Boost, Lasso Regression and Neural Network Regression.
+- Model training and evaluation.
+- Performance metrics (accuracy, precision, recall, F1-score, etc.).
+
 ![Alt text](image-1.png)
-Hyperparameter tuning.
+
+- Hyperparameter tuning.
 
 #### Website Building
 
  
 
 # Results and Discussion
-Presentation of the model evaluation results.
-Interpretation of feature importance.
-Discussion on the model's performance and limitations.
-Insights derived from the analysis.
+- Presentation of the model evaluation results.
+- Interpretation of feature importance.
+- Discussion on the model's performance and limitations.
+- Insights derived from the analysis.
 
 # Conclusion
-Summary of key findings.
-Recommendations for future work.
-Conclusion remarks.
+- Summary of key findings.
+- Recommendations for future work.
+- Conclusion remarks.
 
 # References
-Citation of datasets, libraries, and resources used.
-Links to relevant research papers or articles.<br>
+- Citation of datasets, libraries, and resources used.
 Data Source: https://www.kaggle.com/c/home-credit-default-risk/data
 # Appendix
-Additional charts or tables.
-Any other supplementary materials.
+- Additional charts or tables.
+- Any other supplementary materials.
 
 
