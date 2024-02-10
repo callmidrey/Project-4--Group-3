@@ -8,13 +8,13 @@ This Project was conducted b 4 group members in the Data Analytics Bootcamp with
 This project was aimed at building a highly accurate predictive model that can predict risk probability of default for loan applicants based on the dataset provided by the home credit. This model will be used in real life on a website. 
 We started looking for data that will enable us to achieve this task and we found one on ww.Kaggle.com. The data source used for this project is: https://www.kaggle.com/c/home-credit-default-risk/data 
 Once that data which met all the requirement to building this model was met, we divided the task into 4 main parts and distributed amongst group members.
-•	ETL & EDA (Extract, Transform, Load & Exploratory Data Analysis):
+### •	ETL & EDA (Extract, Transform, Load & Exploratory Data Analysis):
 This part involves preparing the data for analysis and modeling by extracting it from various sources, transforming it into a suitable format, and loading it into the required data structures. Additionally, it encompasses conducting exploratory data analysis (EDA) to understand the data's properties, quality, and relationships.
-•	Data Analysis and Visualizations:
+### •	Data Analysis and Visualizations:
 This part involves analyzing the data, exploring its characteristics, identifying patterns, trends, and relationships within the data. It also includes creating visualizations such as histograms, scatter plots, and heatmaps to gain insights into the data and communicate findings effectively.
-•	Models and Integration with Front End:
+### •	Models and Integration with Front End:
 In this part, group members focus on developing machine learning models based on the analyzed data. This may include selecting appropriate algorithms, training and evaluating models, fine-tuning parameters, and integrating the models with the front end of the application or system.
-•	Front End:
+### •	Front End:
 Group members working on the front end are responsible for designing and developing the user interface (UI) and user experience (UX) components of the application or system. This includes creating layouts, implementing functionality, and ensuring a seamless and intuitive user interface.
 Each part plays a crucial role in the overall process of building a model and its integration into a functional system or application.
 
