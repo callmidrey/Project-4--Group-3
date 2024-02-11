@@ -1,4 +1,5 @@
-<!-- templates/pre_evaluation.html -->
+<!-- templates/form.html -->
+>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Pre-Evaluation</title>
-    <!-- Adjust the path based on your project structure -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -14,125 +14,152 @@
     <header>
         <h1>Loan Prediction</h1>
         <nav>
-            <a href="{{ url_for('home') }}" class="nav-button">Home</a>
-            <a href="{{ url_for('pre_evaluation') }}" class="nav-button">Pre-Evaluation Form</a>
+            <a href="{{ url_for('index') }}" class="nav-button">Home</a>
+            <a href="{{ url_for('api') }}" class="nav-button">API</a>
         </nav>
     </header>
 
     <h2>Pre-assessment form</h2>
 
     <form id="dataForm">
+        <!-- Personal Information Section -->
+        <h3>Personal Information</h3>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required class="styled-input"><br>
 
-        <label for="DAYS_ID_PUBLISH">Days ID Publish:</label>
-        <input type="number" id="DAYS_ID_PUBLISH" name="DAYS_ID_PUBLISH" required class="styled-input"><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required class="styled-input"><br>
 
-        <label for="DAYS_EMPLOYED">Days Employed:</label>
-        <input type="number" id="DAYS_EMPLOYED" name="DAYS_EMPLOYED" required class="styled-input"><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required class="styled-input"><br>
 
-        <label for="DAYS_BIRTH">Days Birth:</label>
-        <input type="number" id="DAYS_BIRTH" name="DAYS_BIRTH" required class="styled-input"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required class="styled-input"><br>
 
-        <label for="DAYS_REGISTRATION">Days Registration:</label>
-        <input type="number" id="DAYS_REGISTRATION" name="DAYS_REGISTRATION" required class="styled-input"><br>
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" required class="styled-input"><br>
 
-        <label for="AMT_INCOME_TOTAL">Income:</label>
-        <input type="number" id="AMT_INCOME_TOTAL" name="AMT_INCOME_TOTAL" required class="styled-input"><br>
+        <!-- Gap between sections -->
+        <hr>
 
-        <label for="DAYS_LAST_PHONE_CHANGE">Days Last Phone Change:</label>
-        <input type="number" id="DAYS_LAST_PHONE_CHANGE" name="DAYS_LAST_PHONE_CHANGE" required class="styled-input"><br>
-
-        <label for="DAYS_CREDIT">Days Credit:</label>
-        <input type="number" id="DAYS_CREDIT" name="DAYS_CREDIT" required class="styled-input"><br>
-
-        <label for="AMT_REQ_CREDIT_BUREAU_YEAR">Amt Req Credit Bureau Year:</label>
-        <input type="number" id="AMT_REQ_CREDIT_BUREAU_YEAR" name="AMT_REQ_CREDIT_BUREAU_YEAR" required class="styled-input"><br>
-
-        <label for="CNT_FAM_MEMBERS">Count Family Members:</label>
+        <h3>Family </h3>
+        
+        <label for="CNT_FAM_MEMBERS">Number of Family Members:</label>
         <input type="number" id="CNT_FAM_MEMBERS" name="CNT_FAM_MEMBERS" required class="styled-input"><br>
-
+        
         <label for="OWN_CAR_AGE">Own Car Age:</label>
         <input type="number" id="OWN_CAR_AGE" name="OWN_CAR_AGE" required class="styled-input"><br>
+        
 
-        <label for="AMT_CREDIT_SUM">Amt Credit Sum:</label>
-        <input type="number" id="AMT_CREDIT_SUM" name="AMT_CREDIT_SUM" required class="styled-input"><br>
+        <hr>
+        <!-- Financial Information Section -->
+        <h3>Financial </h3>
+        <label for="SK_ID_CURR">SK Current ID:</label>
+        <input type="number" id="SK_ID_CURR" name="SK_ID_CURR" required class="styled-input"><br>
 
-        <label for="REGION_RATING_CLIENTCNT_INSTALMENT_MATURE_CUM">Region Rating ClientCnt Instalment Mature Cum:</label>
-        <input type="number" id="REGION_RATING_CLIENTCNT_INSTALMENT_MATURE_CUM" name="REGION_RATING_CLIENTCNT_INSTALMENT_MATURE_CUM" required class="styled-input"><br>
+        <label for="AMT_INCOME_TOTAL">AMT Income Total:</label>
+        <input type="number" id="AMT_INCOME_TOTAL" name="AMT_INCOME_TOTAL" required class="styled-input"><br>
 
-        <label for="DAYS_CREDIT_ENDDATE">Days Credit Enddate:</label>
-        <input type="number" id="DAYS_CREDIT_ENDDATE" name="DAYS_CREDIT_ENDDATE" required class="styled-input"><br>
+        <label for="AMT_REQ_CREDIT_BUREAU_YEAR">AMT Req Credit Bureau Year:</label>
+        <input type="number" id="AMT_REQ_CREDIT_BUREAU_YEAR" name="AMT_REQ_CREDIT_BUREAU_YEAR" required class="styled-input"><br>
 
-        <label for="OBS_30_CNT_SOCIAL_CIRCLE">Obs 30 Count Social Circle:</label>
+        <label for="OBS_30_CNT_SOCIAL_CIRCLE">OBS 30 CNT SOCIAL CIRCLE:</label>
         <input type="number" id="OBS_30_CNT_SOCIAL_CIRCLE" name="OBS_30_CNT_SOCIAL_CIRCLE" required class="styled-input"><br>
 
-        <label for="OBS_60_CNT_SOCIAL_CIRCLE">Obs 60 Count Social Circle:</label>
+        <label for="OBS_60_CNT_SOCIAL_CIRCLE">OBS 60 CNT SOCIAL CIRCLE:</label>
         <input type="number" id="OBS_60_CNT_SOCIAL_CIRCLE" name="OBS_60_CNT_SOCIAL_CIRCLE" required class="styled-input"><br>
+        
+        <label for="AMT_ANNUITY_x">AMT Annuity:</label>
+        <input type="number" id="AMT_ANNUITY_x" name="AMT_ANNUITY_x" required class="styled-input"><br>
 
-        <label for="DAYS_CREDIT_UPDATE">Days Credit Update:</label>
-        <input type="number" id="DAYS_CREDIT_UPDATE" name="DAYS_CREDIT_UPDATE" required class="styled-input"><br>
+        <label for="CNT_INSTALMENT_MATURE_CUM">CNT INSTALMENT MATURE CUM:</label>
+        <input type="number" id="CNT_INSTALMENT_MATURE_CUM" name="CNT_INSTALMENT_MATURE_CUM" required class="styled-input"><br>
 
-        <label for="AMT_PAYMENT_CURRENT">Amt Payment Current:</label>
-        <input type="number" id="AMT_PAYMENT_CURRENT" name="AMT_PAYMENT_CURRENT" required class="styled-input"><br>
+        <label for="AMT_PAYMENT">Amount Payment:</label>
+        <input type="number" id="AMT_PAYMENT" name="AMT_PAYMENT" required class="styled-input"><br>
 
-        <label for="MONTHS_BALANCE">Months Balance:</label>
-        <input type="number" id="MONTHS_BALANCE" name="MONTHS_BALANCE" required class="styled-input"><br>
+        <label for="DAYS_ENTRY_PAYMENT">Days Entry Payment:</label>
+        <input type="number" id="DAYS_ENTRY_PAYMENT" name="DAYS_ENTRY_PAYMENT" required class="styled-input"><br>
 
-        <label for="REGION_RATING_CLIENT_W_CITY">Region Rating Client W City:</label>
-        <input type="number" id="REGION_RATING_CLIENT_W_CITY" name="REGION_RATING_CLIENT_W_CITY" required class="styled-input"><br>
+        <label for="AMT_INSTALMENT">Amount Instalment:</label>
+        <input type="number" id="AMT_INSTALMENT" name="AMT_INSTALMENT" required class="styled-input"><br>
 
-        <label for="DAYS_ENDDATE_FACT">Days Enddate Fact:</label>
-        <input type="number" id="DAYS_ENDDATE_FACT" name="DAYS_ENDDATE_FACT" required class="styled-input"><br>
+        <label for="DAYS_INSTALMENT">Days Instalment:</label>
+        <input type="number" id="DAYS_INSTALMENT" name="DAYS_INSTALMENT" required class="styled-input"><br>
 
-        <label for="CNT_CHILDREN">Count Children:</label>
-        <input type="number" id="CNT_CHILDREN" name="CNT_CHILDREN" required class="styled-input"><br>
+        <label for="NUM_INSTALMENT_NUMBER">Number Instalment Number:</label>
+        <input type="number" id="NUM_INSTALMENT_NUMBER" name="NUM_INSTALMENT_NUMBER" required class="styled-input"><br>
 
-        <label for="NAME_FAMILY_STATUS_Seperated">Name Family Status Separated:</label>
-        <input type="number" id="NAME_FAMILY_STATUS_Seperated" name="NAME_FAMILY_STATUS_Seperated" required class="styled-input"><br>
+        <label for="CNT_INSTALMENT_FUTURE">Count Instalment Future:</label>
+        <input type="number" id="CNT_INSTALMENT_FUTURE" name="CNT_INSTALMENT_FUTURE" required class="styled-input"><br>
 
-        <label for="AMT_REQ_CREDIT_BUREAU_MON">Amt Req Credit Bureau Mon:</label>
-        <input type="number" id="AMT_REQ_CREDIT_BUREAU_MON" name="AMT_REQ_CREDIT_BUREAU_MON" required class="styled-input"><br>
+        <label for="CNT_INSATLMENT">Count Insatllment:</label>
+        <input type="number" id="CNT_INSATLMENT" name="CNT_INSATLMENT" required class="styled-input"><br>
 
-        <label for="AMT_PAYMENT_TOTAL_CURRENT">Amt Payment Total Current:</label>
-        <input type="number" id="AMT_PAYMENT_TOTAL_CURRENT" name="AMT_PAYMENT_TOTAL_CURRENT" required class="styled-input"><br>
+        <label for="MONTHS_BALANCE_Credit_card_balance">MONTHS BALANCE Credit card balance:</label>
+        <input type="number" id="MONTHS_BALANCE_Credit_card_balance" name="MONTHS_BALANCE_Credit_card_balance" required class="styled-input"><br>
 
-        <label for="FLAG_EMAIL">Flag Email:</label>
-        <input type="number" id="FLAG_EMAIL" name="FLAG_EMAIL" required class="styled-input"><br>
+        <label for="MONTHS_BALANCE_x">MONTHS BALANCE:</label>
+        <input type="number" id="MONTHS_BALANCE_x" name="MONTHS_BALANCE_x" required class="styled-input"><br>
+        
 
-        <!-- Add other input fields as needed -->
+        
 
         <button type="button" onclick="submitForm()" class="styled-button">Submit</button>
     </form>
 
-    <script src="{{ url_for('static', filename='js/style.js') }}"></script>
+    <form id="loanAmountPredictionForm">
+       <script> 
+        function runLoanAmountPrediction() {
+            fetch('/predictLoanAmount', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Loan amount predicted successfully!');
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        } 
+        </script>
+        <button type="button" onclick="runLoanAmountPrediction()">Predict Loan Amount</button>
+    </form>
+
+    <!-- <script src="{{ url_for('static', filename='js/style.js') }}"></script> -->
     <script>
         function submitForm() {
             const formData = {
-                DAYS_ID_PUBLISH: document.getElementById('DAYS_ID_PUBLISH').value,
-                DAYS_EMPLOYED: document.getElementById('DAYS_EMPLOYED').value,
-                DAYS_BIRTH: document.getElementById('DAYS_BIRTH').value,
-                DAYS_REGISTRATION: document.getElementById('DAYS_REGISTRATION').value,
+                first_name: document.getElementById('first_name').value,
+                last_name: document.getElementById('last_name').value,
+                age: document.getElementById('age').value,
+                email: document.getElementById('email').value,
+                phone_number: document.getElementById('phone_number').value,
+                SK_ID_CURR: document.getElementById('SK_ID_CURR').value,
                 AMT_INCOME_TOTAL: document.getElementById('AMT_INCOME_TOTAL').value,
-                DAYS_LAST_PHONE_CHANGE: document.getElementById('DAYS_LAST_PHONE_CHANGE').value,
-                DAYS_CREDIT: document.getElementById('DAYS_CREDIT').value,
                 AMT_REQ_CREDIT_BUREAU_YEAR: document.getElementById('AMT_REQ_CREDIT_BUREAU_YEAR').value,
-                CNT_FAM_MEMBERS: document.getElementById('CNT_FAM_MEMBERS').value,
-                OWN_CAR_AGE: document.getElementById('OWN_CAR_AGE').value,
-                AMT_CREDIT_SUM: document.getElementById('AMT_CREDIT_SUM').value,
-                REGION_RATING_CLIENTCNT_INSTALMENT_MATURE_CUM: document.getElementById('REGION_RATING_CLIENTCNT_INSTALMENT_MATURE_CUM').value,
-                DAYS_CREDIT_ENDDATE: document.getElementById('DAYS_CREDIT_ENDDATE').value,
                 OBS_30_CNT_SOCIAL_CIRCLE: document.getElementById('OBS_30_CNT_SOCIAL_CIRCLE').value,
                 OBS_60_CNT_SOCIAL_CIRCLE: document.getElementById('OBS_60_CNT_SOCIAL_CIRCLE').value,
-                DAYS_CREDIT_UPDATE: document.getElementById('DAYS_CREDIT_UPDATE').value,
-                AMT_PAYMENT_CURRENT: document.getElementById('AMT_PAYMENT_CURRENT').value,
-                MONTHS_BALANCE: document.getElementById('MONTHS_BALANCE').value,
-                REGION_RATING_CLIENT_W_CITY: document.getElementById('REGION_RATING_CLIENT_W_CITY').value,
-                DAYS_ENDDATE_FACT: document.getElementById('DAYS_ENDDATE_FACT').value,
-                CNT_CHILDREN: document.getElementById('CNT_CHILDREN').value,
-                NAME_FAMILY_STATUS_Seperated: document.getElementById('NAME_FAMILY_STATUS_Seperated').value,
-                AMT_REQ_CREDIT_BUREAU_MON: document.getElementById('AMT_REQ_CREDIT_BUREAU_MON').value,
-                AMT_PAYMENT_TOTAL_CURRENT: document.getElementById('AMT_PAYMENT_TOTAL_CURRENT').value,
-                FLAG_EMAIL: document.getElementById('FLAG_EMAIL').value,
-              
+                AMT_ANNUITY_x: document.getElementById('AMT_ANNUITY_x').value,
+                CNT_INSTALMENT_MATURE_CUM: document.getElementById('CNT_INSTALMENT_MATURE_CUM').value,
+                AMT_PAYMENT: document.getElementById('AMT_PAYMENT').value,
+                DAYS_ENTRY_PAYMENT: document.getElementById('DAYS_ENTRY_PAYMENT').value,
+                AMT_INSTALMENT: document.getElementById('AMT_INSTALMENT').value,
+                DAYS_INSTALMENT: document.getElementById('DAYS_INSTALMENT').value,
+                NUM_INSTALMENT_NUMBER: document.getElementById('NUM_INSTALMENT_NUMBER').value,
+                CNT_INSTALMENT_FUTURE: document.getElementById('CNT_INSTALMENT_FUTURE').value,
+                CNT_INSATLMENT: document.getElementById('CNT_INSATLMENT').value,
+                MONTHS_BALANCE_Credit_card_balance: document.getElementById('MONTHS_BALANCE_Credit_card_balance').value,
+                MONTHS_BALANCE_x: document.getElementById('MONTHS_BALANCE_x').value,
+                CNT_FAM_MEMBERS: document.getElementById('CNT_FAM_MEMBERS').value,
+                OWN_CAR_AGE: document.getElementById('OWN_CAR_AGE').value
+
+                
             };
             fetch('/submitData', {
                     method: 'POST',
@@ -149,7 +176,11 @@
                 .catch((error) => {
                     console.error('Error:', error);
                 });
-        }
+        }    
+
+  
+   
+        
     </script>
 </body>
 

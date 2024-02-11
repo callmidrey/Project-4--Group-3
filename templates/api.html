@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>List of APIs</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/api.css') }}">
 </head>
 <body>
+  <header>
+    <h1>Loan Prediction</h1>
+    <nav>
+      <a href="{{ url_for('index') }}" class="nav-button">Home</a>
+      <a href="{{ url_for('api') }}" class="nav-button">API</a>
+    </nav>
+  </header>
+  
   <h1>List of APIs</h1>
   <ul>
     <li><a href="/bureau">Bureau</a></li>

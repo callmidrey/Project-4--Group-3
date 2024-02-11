@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styles for the API list page */
+  #api-list-container {
+    background: linear-gradient(to bottom, #001F3F, #00102B);
+    color: white;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #api-list-content {
+    text-align: center;
+  }
+  
+  .api-list-item {
+    margin-bottom: 10px;
+  }
+  
+  .api-list-link {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  .api-list-link:hover {
+    color: #0056b3;
+  }
+  
