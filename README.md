@@ -21,10 +21,9 @@ Each part plays a crucial role in the overall process of building a model and it
 
 # Extract, Transform and Load (ETL) 
 
-Description of the dataset: features, target variable, etc.<br>
 #### Data source and acquisition process.<br>
-- Data is acquired from Kaggle.com provided by Home credit Group.<br>
-- Data contains files:
+Data is acquired from Kaggle.com provided by Home credit Group.<br>
+Data contains files:
 <ul>
         <li>application_{train|test}.csv</li>
         <li>bureau.csv</li>
@@ -92,9 +91,13 @@ RandomOverSampler and SMOTE were used to balance the data.<br>
 Models' predictions were made and imbalanced classification reports were gathered.
 Based on the classification reports a concise heatmap is generated.
 
-![Alt text](Model_viz_3)
+![Alt text](https://github.com/callmidrey/Project-4--Group-3/blob/main/Model_viz3.png)<br>
 
-1. Model accuracy & probability. The following steps were taken to build a machine learning model
+RandomForestClassifier Model has been found to be best model for the purpose with high accuracy and better precision, Recall and F1 scores. model was tested with balanced data as well but the results were found to be pretty much same.
+AdaBoost when used with balanced data using SMOTE showed terrible decline in precision for high risk prediction.
+Similary for prediction of RandomForestRegressor model RMSE of found to be second best after Lasso Regression. Since Lasso Regression is better suited for feature selection than prediction with weak relationship.So RandomForestRegressor model is selected.<br>
+
+### 1. Model accuracy & probability. The following steps were taken to build a machine learning model
 - Splitting the dataset into training and testing sets.
 - Selection of appropriate machine learning algorithms: Random Forest Classifier. 
 - Model training and evaluation.
@@ -108,7 +111,7 @@ Based on the classification reports a concise heatmap is generated.
 ![Alt text](image-3.png)
 
 
-2. Model prediction
+### 2. Model prediction
 - Splitting the dataset into training and testing sets.
 - Selection of appropriate machine learning algorithms: Random Forest Regressor, XG Boost, Lasso Regression and Neural Network Regression.
 - Model training and evaluation.
