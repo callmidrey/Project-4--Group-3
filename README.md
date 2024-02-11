@@ -21,10 +21,9 @@ Each part plays a crucial role in the overall process of building a model and it
 
 # Extract, Transform and Load (ETL) 
 
-Description of the dataset: features, target variable, etc.<br>
 #### Data source and acquisition process.<br>
-- Data is acquired from Kaggle.com provided by Home credit Group.<br>
-- Data contains files:
+Data is acquired from Kaggle.com provided by Home credit Group.<br>
+Data contains files:
 <ul>
         <li>application_{train|test}.csv</li>
         <li>bureau.csv</li>
@@ -40,13 +39,17 @@ Description of the dataset: features, target variable, etc.<br>
 #### Handling missing values.<br>
 - Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
 - However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.
- A snapshot of the result is as below indicating a successful handling of missing values
+ A snapshot of the result is as below indicating a successful handling of missing values<br>
  ![alt text](<Screenshot 2024-02-10 131640.png>)
  <br>
+
+ 
 #### Data cleaning and formatting.<br>
 - After Initial cleaning and handling of missing values, CSV files are exported, a schema was created. The schema is illustrared as below:
 ![alt text](QuickDBD-export.png)
 <br>
+
+
 #### Connect to Sources(APIs):<br>
 - APIs are created using Database queries, Final schema file is used to create tables in Postgresql. Tables are populated with data by using postgresqlpop.ipynb file which have functions to insert data in the database from CSV files.<br>
 The app.py file has query setup to obtain data from Postgresql via APIs. <br>
@@ -62,7 +65,8 @@ below is list of APIs:<br>
 </ul>
 
 #### Data Retrieval from APIs:<br>
-- Data is extracted from API and tables are merged together using get_data_from_api.ipynb file.
+- Data is extracted from API and tables are merged together using model_probab.ipynb & model_predict.ipynb file for respective modelling purpose.
+-"POS_CASH_balance", "Installments_payments", "Credit_card_balance", "Previous_application" were merged on SK_ID_PREV and then the "Application_train" & "Bureau" on SK_ID_CURR while Bureau is attached with Bureau_balance at SK_ID_bureau.
 - Data is then used for modelling process and Data analysis.
 
 # Exploratory Data Analysis (EDA).
@@ -79,8 +83,21 @@ Correlational Analysis of some featues and its heatmap created to show relations
 ![alt text](image-6.png)
 ![alt text](image-7.png)
 
-# Models and Integration with Front End 
-1. Model accuracy & probability. The following steps were taken to build a machime learning model
+# Models and Integration with Front End <br>
+### Model Selection:
+Since our data is skewed, it has count of 176770 for 0  and 14780 for 1.<br>
+While trying of choose a reasonable model, resampling and ensembling methods were used.<br>
+RandomOverSampler and SMOTE were used to balance the data.<br>
+Models' predictions were made and imbalanced classification reports were gathered.
+Based on the classification reports a concise heatmap is generated.
+
+![Alt text](https://github.com/callmidrey/Project-4--Group-3/blob/main/Model_viz3.png)<br>
+
+RandomForestClassifier Model has been found to be best model for the purpose with high accuracy and better precision, Recall and F1 scores. model was tested with balanced data as well but the results were found to be pretty much same.
+AdaBoost when used with balanced data using SMOTE showed terrible decline in precision for high risk prediction.
+Similary for prediction of RandomForestRegressor model RMSE of found to be second best after Lasso Regression. Since Lasso Regression is better suited for feature selection than prediction with weak relationship.So RandomForestRegressor model is selected.<br>
+
+### 1. Model accuracy & probability. The following steps were taken to build a machine learning model
 - Splitting the dataset into training and testing sets.
 - Selection of appropriate machine learning algorithms: Random Forest Classifier. 
 - Model training and evaluation.
@@ -94,7 +111,7 @@ Correlational Analysis of some featues and its heatmap created to show relations
 ![Alt text](image-3.png)
 
 
-2. Model prediction
+### 2. Model prediction
 - Splitting the dataset into training and testing sets.
 - Selection of appropriate machine learning algorithms: Random Forest Regressor, XG Boost, Lasso Regression and Neural Network Regression.
 - Model training and evaluation.
