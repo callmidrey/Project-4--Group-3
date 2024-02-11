@@ -122,15 +122,32 @@ def create_table():
             id SERIAL PRIMARY KEY,
             first_name VARCHAR(255),
             last_name VARCHAR(255),
+            "DAYS_ID_PUBLISH" INTEGER,
+            "DAYS_BIRTH" INTEGER,
+            "DAYS_REGISTRATION" INTEGER,
+            "DAYS_LAST_PHONE_CHANGE" INTEGER,
+            "AMT_ANNUITY_x" INTEGER,
+            "SK_ID_CURR" INTEGER,
+            "AMT_CREDIT"INTEGER,
+            "DAYS_EMPLOYED" INTEGER,
+            "AMT_GOODS_PRICE" INTEGER,
             "AMT_INCOME_TOTAL" INTEGER,
-            job_type VARCHAR(255),
-            own_property VARCHAR(3),
-            "FLAG_MOBIL" INTEGER,
-            "FLAG_OWN_CAR" INTEGER,
-            marital_status VARCHAR(255),
-            living_arrangement VARCHAR(255),
-            education VARCHAR(255),
-            years_experience INTEGER
+            "HOUR_APPR_PROCESS_START" INTEGER,
+            "AMT_REQ_CREDIT_BUREAU_YEAR" INTEGER,
+            "OWN_CAR_AGE" VARCHAR(3),
+            "OBS_30_CNT_SOCIAL_CIRCLE" VARCHAR(255),
+            "OBS_60_CNT_SOCIAL_CIRCLE" VARCHAR(255),
+            "AMT_PAYMENT" INTEGER,
+            "DAYS_ENTRY_PAYMENT" INTEGER,
+            "AMT_INSTALMENT" INTEGER,
+            "DAYS_INSTALMENT" INTEGER,
+            "NUM_INSTALMENT_NUMBER" INTEGER,
+            "CNT_INSTALMENT_FUTURE" INTEGER,
+             "MONTHS_BALANCE_x" INTEGER,
+            "CNT_FAM_MEMBERS" INTEGER,
+            "CNT_INSTALMENT" INTEGER,
+            "CNT_INSTALMENT_MATURE_CUM" INTEGER,
+            "MONTHS_BALANCE_Credit_card_balance" INTEGER
         );
     '''
     conn = connect_to_db()
@@ -155,10 +172,14 @@ def submit_data():
         
 
         query = '''
-            INSERT INTO test_applicant (first_name, last_name, "AMT_INCOME_TOTAL", job_type, own_property, 
-                                        "FLAG_MOBIL", "FLAG_OWN_CAR", marital_status, living_arrangement, 
-                                        education, years_experience)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO test_applicant (first_name, last_name, "DAYS_ID_PUBLISH", "DAYS_BIRTH", "DAYS_REGISTRATION", "DAYS_LAST_PHONE_CHANGE",
+              "AMT_ANNUITY_x", "SK_ID_CURR", "DAYS_EMPLOYED", "AMT_GOODS_PRICE", "AMT_INCOME_TOTAL",
+              "HOUR_APPR_PROCESS_START", "AMT_REQ_CREDIT_BUREAU_YEAR", "OWN_CAR_AGE",
+              "OBS_30_CNT_SOCIAL_CIRCLE", "OBS_60_CNT_SOCIAL_CIRCLE", "AMT_PAYMENT",
+              "DAYS_ENTRY_PAYMENT", "AMT_INSTALMENT", "DAYS_INSTALMENT", "NUM_INSTALMENT_NUMBER",
+              "CNT_INSTALMENT_FUTURE", "MONTHS_BALANCE_x", "CNT_FAM_MEMBERS", "CNT_INSTALMENT",
+              "CNT_INSTALMENT_MATURE_CUM", "MONTHS_BALANCE_Credit_card_balance")
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             RETURNING *;
         '''
 

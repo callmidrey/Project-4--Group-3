@@ -4,40 +4,27 @@ Bootcamp Project 4- Project Title: Analyzing Home Credit Default Risk
 # Introduction
 This Project was conducted b 4 group members in the Data Analytics Bootcamp with the University of Toronto School of Continus Studies. The group members are Lovepreet Singh, Muhammad Kashif, Vinay Vattipally and Audrey Nkrumah.
 
-Introduction to the Home Credit Default Risk dataset.
+# Overview
+This project was aimed at building a highly accurate predictive model that can predict risk probability of default for loan applicants based on the dataset provided by the home credit. This model will be used in real life on a website. 
+We started looking for data that will enable us to achieve this task and we found one on ww.Kaggle.com. The data source used for this project is: https://www.kaggle.com/c/home-credit-default-risk/data 
+Once that data which met all the requirement to building this model was met, we divided the task into 4 main parts and distributed amongst group members.
+### •	ETL & EDA (Extract, Transform, Load & Exploratory Data Analysis):
+This part involves preparing the data for analysis and modeling by extracting it from various sources, transforming it into a suitable format, and loading it into the required data structures. Additionally, it encompasses conducting exploratory data analysis (EDA) to understand the data's properties, quality, and relationships.
+### •	Data Analysis and Visualizations:
+This part involves analyzing the data, exploring its characteristics, identifying patterns, trends, and relationships within the data. It also includes creating visualizations such as histograms, scatter plots, and heatmaps to gain insights into the data and communicate findings effectively.
+### •	Models and Integration with Front End:
+In this part, group members focus on developing machine learning models based on the analyzed data. This may include selecting appropriate algorithms, training and evaluating models, fine-tuning parameters, and integrating the models with the front end of the application or system.
+### •	Front End:
+Group members working on the front end are responsible for designing and developing the user interface (UI) and user experience (UX) components of the application or system. This includes creating layouts, implementing functionality, and ensuring a seamless and intuitive user interface.
+Each part plays a crucial role in the overall process of building a model and its integration into a functional system or application.
 
-Objectives and goals of the analysis.
-The objective of the project is to :
-1. Exploratory Data Analysis (EDA):
-        Understand the distribution and relationships between variables in the dataset.
-        Identify trends, patterns, and outliers.
-        Explore correlations between features and the target variable.
-        Visualize key insights to gain a better understanding of the data.
 
-2. Feature Importance Analysis:
-        Determine which features have the most significant impact on predicting default risk.
-        Use techniques like feature importance scores from machine learning models or statistical methods to rank features.
-
-3. Risk Segmentation:
-        Identify different risk segments within the dataset based on demographic or financial characteristics.
-        Analyze the characteristics of high-risk and low-risk groups.
-        Develop strategies to mitigate risk for different segments.
-
-4. Customer Profiling:
-        Create profiles of different types of customers based on their credit behavior, demographic information, and financial history.
-        Understand the characteristics of customers who are more likely to default on their loans.         
-
-5. Build a good predictive model and Interprate the Model to:
-        Understand how the predictive model makes decisions.
-        Interpret model coefficients, feature importance scores, or other model outputs to explain predictions.
-        Identify factors contributing to high or low default probabilities for individual borrowers.
-
-# Data Understanding
+# Extract, Transform and Load (ETL) 
 
 Description of the dataset: features, target variable, etc.<br>
 #### Data source and acquisition process.<br>
-Data is acquired from Kaggle.com provided by Home credit Group.<br>
-Data contains files:
+- Data is acquired from Kaggle.com provided by Home credit Group.<br>
+- Data contains files:
 <ul>
         <li>application_{train|test}.csv</li>
         <li>bureau.csv</li>
@@ -51,13 +38,18 @@ Data contains files:
 
 ### Data preprocessing steps:<br>
 #### Handling missing values.<br>
-Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
-However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.<br>
+- Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
+- However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.
+ A snapshot of the result is as below indicating a successful handling of missing values
+ ![alt text](<Screenshot 2024-02-10 131640.png>)
+ <br>
 #### Data cleaning and formatting.<br>
-After Initial cleaning and handling of missing values, CSV files are exported.<br>
+- After Initial cleaning and handling of missing values, CSV files are exported, a schema was created. The schema is illustrared as below:
+![alt text](QuickDBD-export.png)
+<br>
 #### Connect to Sources(APIs):<br>
-APIs are created using Database queries, Final schema file is used to create tables in Postgresql. Tables are populated with data by using postgresqlpop.ipynb file which have functions to insert data in the database from CSV files.<br>
-app.py file has query setup to obtain data from Postgresql via APIs. <br>
+- APIs are created using Database queries, Final schema file is used to create tables in Postgresql. Tables are populated with data by using postgresqlpop.ipynb file which have functions to insert data in the database from CSV files.<br>
+The app.py file has query setup to obtain data from Postgresql via APIs. <br>
 below is list of APIs:<br>
 <ul>
         <li>"Bureau" : 'http://127.0.0.1:5000/bureau'</li>
@@ -70,44 +62,68 @@ below is list of APIs:<br>
 </ul>
 
 #### Data Retrieval from APIs:<br>
-Data is extracted from API and tables are merged together using get_data_from_api.ipynb file.<br>
-Data is then used for modelling process and Data analysis.<br>
-Exploratory Data Analysis (EDA):
-Summary statistics.
-Data visualization (histograms, box plots, correlation matrices, etc.).
+- Data is extracted from API and tables are merged together using get_data_from_api.ipynb file.
+- Data is then used for modelling process and Data analysis.
 
-# Feature Engineering
-Creation of new features (if applicable).
-Feature selection techniques.
-Encoding categorical variables.
-Scaling and normalization of numerical features.
+# Exploratory Data Analysis (EDA).
 
-# Model Building
-Selection of appropriate machine learning algorithms:
-Logistic Regression/ Random Forest
-Splitting the dataset into training and testing sets.
-Model training and evaluation:
-Cross-validation techniques.
-Performance metrics (accuracy, precision, recall, F1-score, etc.).
-Hyperparameter tuning.
+### Categorical Features Analysis Summary
+The categorical Features were examined, and the unique number of levels was obtained.
+Upon analyzing the categorical features in the dataset, several key observations were made summarizig it in the graph below:
+![alt text](image-4.png)
+
+A snapshot of the numerical features analysis is also depicted as below:
+![alt text](image-5.png)
+
+Correlational Analysis of some featues and its heatmap created to show relationship amongst variables
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+# Models and Integration with Front End 
+1. Model accuracy & probability. The following steps were taken to build a machime learning model
+- Splitting the dataset into training and testing sets.
+- Selection of appropriate machine learning algorithms: Random Forest Classifier. 
+- Model training and evaluation.
+- Performance metrics (accuracy, precision, recall, F1-score, etc.).
+
+![Alt text](image-2.png)
+
+- Hyperparameter tuning.
+- Choosing top contributing features in model and testing model accuracy again.
+
+![Alt text](image-3.png)
+
+
+2. Model prediction
+- Splitting the dataset into training and testing sets.
+- Selection of appropriate machine learning algorithms: Random Forest Regressor, XG Boost, Lasso Regression and Neural Network Regression.
+- Model training and evaluation.
+- Performance metrics (accuracy, precision, recall, F1-score, etc.).
+
+![Alt text](image-1.png)
+
+- Hyperparameter tuning.
+
+#### Website Building
+
+ 
 
 # Results and Discussion
-Presentation of the model evaluation results.
-Interpretation of feature importance.
-Discussion on the model's performance and limitations.
-Insights derived from the analysis.
+- Presentation of the model evaluation results.
+- Interpretation of feature importance.
+- Discussion on the model's performance and limitations.
+- Insights derived from the analysis.
 
 # Conclusion
-Summary of key findings.
-Recommendations for future work.
-Conclusion remarks.
+- Summary of key findings.
+- Recommendations for future work.
+- Conclusion remarks.
 
 # References
-Citation of datasets, libraries, and resources used.
-Links to relevant research papers or articles.<br>
+- Citation of datasets, libraries, and resources used.
 Data Source: https://www.kaggle.com/c/home-credit-default-risk/data
 # Appendix
-Additional charts or tables.
-Any other supplementary materials.
+- Additional charts or tables.
+- Any other supplementary materials.
 
 
