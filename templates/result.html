@@ -1,33 +1,24 @@
-<!-- templates/result.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Approval Result</title>
-    <!-- Add your CSS styles or link to external stylesheets if needed -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+    <title>Loan Eligibility Result</title>
+<!-- Add your CSS styles or link to external stylesheets if needed -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Loan Prediction</h1>
-        <nav>
-            <a href="{{ url_for('index') }}" class="nav-button">Home</a>
-        </nav>
-    <h1>Loan Approval Result</h1>
-    
-    <p>Probability: {{ probability }}</p>
-    
-    {% if eligibility == 'approved' %}
-        <p>Congratulations! Your loan has been approved.</p>
-    {% elif eligibility == 'not approved' %}
-        <p>We regret to inform you that your loan has not been approved.</p>
-    {% else %}
-        <p>Unknown eligibility status.</p>
-    {% endif %}
-
-    
-    <script src="{{ url_for('static', filename='js/result.js') }}"></script>
+    <div>
+        <h1>Loan Eligibility Result</h1>
+        <p id="result-message"></p>
+    </div>
+    <script>
+        // Retrieve result message from JSON response
+        var resultMessage = {{ result_message | tojson | safe }};
+        
+        // Display result message in the HTML
+        document.getElementById("result-message").innerText = resultMessage;
+    </script>
 </body>
 </html>

@@ -22,166 +22,290 @@
     <h2>Pre-assessment form</h2>
 
     <form id="dataForm">
-        <!-- Personal Information Section -->
         <h3>Personal Information</h3>
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" required class="styled-input"><br>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required class="styled-input"><br>
+    
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required class="styled-input"><br>
+    
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" onchange="calculateAge()" required class="styled-input"><br>
 
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" required class="styled-input"><br>
-
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required class="styled-input"><br>
-
+        <label for="DAYS_BIRTH">Age (in days):</label>
+        <input type="number" id="DAYS_BIRTH" name="DAYS_BIRTH" readonly class="styled-input"><br>
+    
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required class="styled-input"><br>
-
-        <label for="phone_number">Phone Number:</label>
-        <input type="tel" id="phone_number" name="phone_number" required class="styled-input"><br>
-
-        <!-- Gap between sections -->
-        <hr>
-
-        <h3>Family </h3>
+        <input type="text" id="email" name="email" required class="styled-input"><br>
+    
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" required class="styled-input"><br>
         
+        <label for="address">Home Address:</label>
+        <input type="text" id="address" name="address" required class="styled-input"><br>
+    
+        <hr>
+    
+        <h3>Family</h3>
+        
+        <label for="marital_status">Marital Status:</label>
+        <input type="marital_status" id="marital_status" name="marital_status" required class="styled-input"><br>
+
         <label for="CNT_FAM_MEMBERS">Number of Family Members:</label>
         <input type="number" id="CNT_FAM_MEMBERS" name="CNT_FAM_MEMBERS" required class="styled-input"><br>
         
-        <label for="OWN_CAR_AGE">Own Car Age:</label>
+        <label for="CNT_CHILDREN">Number of Children:</label>
+        <input type="number" id="CNT_CHILDREN" name="CNT_CHILDREN" required class="styled-input"><br>
+    
+        <hr>
+    
+        <h3>Income & Assests</h3>
+    
+        <label for="AMT_INCOME_TOTAL">Total Income Amount:</label>
+        <input type="number" id="AMT_INCOME_TOTAL" name="AMT_INCOME_TOTAL" required class="styled-input"><br>
+        
+        <label for="AMT_GOODS_PRICE">Price of Goods (last loan recieved)</label>
+        <input type="number" id="AMT_GOODS_PRICE" name="AMT_GOODS_PRICE" required class="styled-input"><br>
+
+        <label for="OWN_CAR_AGE">Age of car (No. of years):</label>
         <input type="number" id="OWN_CAR_AGE" name="OWN_CAR_AGE" required class="styled-input"><br>
         
-
         <hr>
-        <!-- Financial Information Section -->
-        <h3>Financial </h3>
-        <label for="SK_ID_CURR">SK Current ID:</label>
-        <input type="number" id="SK_ID_CURR" name="SK_ID_CURR" required class="styled-input"><br>
-
-        <label for="AMT_INCOME_TOTAL">AMT Income Total:</label>
-        <input type="number" id="AMT_INCOME_TOTAL" name="AMT_INCOME_TOTAL" required class="styled-input"><br>
-
-        <label for="AMT_REQ_CREDIT_BUREAU_YEAR">AMT Req Credit Bureau Year:</label>
-        <input type="number" id="AMT_REQ_CREDIT_BUREAU_YEAR" name="AMT_REQ_CREDIT_BUREAU_YEAR" required class="styled-input"><br>
-
-        <label for="OBS_30_CNT_SOCIAL_CIRCLE">OBS 30 CNT SOCIAL CIRCLE:</label>
-        <input type="number" id="OBS_30_CNT_SOCIAL_CIRCLE" name="OBS_30_CNT_SOCIAL_CIRCLE" required class="styled-input"><br>
-
-        <label for="OBS_60_CNT_SOCIAL_CIRCLE">OBS 60 CNT SOCIAL CIRCLE:</label>
-        <input type="number" id="OBS_60_CNT_SOCIAL_CIRCLE" name="OBS_60_CNT_SOCIAL_CIRCLE" required class="styled-input"><br>
+    
+        <h3>Expenses & Debts</h3>
         
-        <label for="AMT_ANNUITY_x">AMT Annuity:</label>
+        <label for="AMT_CREDIT">Amount Last Loan Received</label>
+        <input type="number" id="AMT_CREDIT" name="AMT_CREDIT" required class="styled-input"><br>
+
+        <label for="AMT_ANNUITY_x">Amount Annuity</label>
         <input type="number" id="AMT_ANNUITY_x" name="AMT_ANNUITY_x" required class="styled-input"><br>
 
-        <label for="CNT_INSTALMENT_MATURE_CUM">CNT INSTALMENT MATURE CUM:</label>
-        <input type="number" id="CNT_INSTALMENT_MATURE_CUM" name="CNT_INSTALMENT_MATURE_CUM" required class="styled-input"><br>
 
-        <label for="AMT_PAYMENT">Amount Payment:</label>
-        <input type="number" id="AMT_PAYMENT" name="AMT_PAYMENT" required class="styled-input"><br>
+        <hr>
 
-        <label for="DAYS_ENTRY_PAYMENT">Days Entry Payment:</label>
-        <input type="number" id="DAYS_ENTRY_PAYMENT" name="DAYS_ENTRY_PAYMENT" required class="styled-input"><br>
+        <h3>Employement Record</h3>
+    
+        <label for="eod">Start Date of Current/Latest Job:</label>
+        <input type="date" id="eod" name="eod" onchange="calculateEmp()" required class="styled-input"><br>
 
-        <label for="AMT_INSTALMENT">Amount Instalment:</label>
-        <input type="number" id="AMT_INSTALMENT" name="AMT_INSTALMENT" required class="styled-input"><br>
+        <label for="DAYS_EMPLOYED">Employement Duration (in days):</label>
+        <input type="number" id="DAYS_EMPLOYED" name="DAYS_EMPLOYED" readonly class="styled-input"><br>
 
-        <label for="DAYS_INSTALMENT">Days Instalment:</label>
-        <input type="number" id="DAYS_INSTALMENT" name="DAYS_INSTALMENT" required class="styled-input"><br>
+        <hr>
 
-        <label for="NUM_INSTALMENT_NUMBER">Number Instalment Number:</label>
-        <input type="number" id="NUM_INSTALMENT_NUMBER" name="NUM_INSTALMENT_NUMBER" required class="styled-input"><br>
+        <h3>Record of Changes</h3>
 
-        <label for="CNT_INSTALMENT_FUTURE">Count Instalment Future:</label>
+        <label for="registeration">Date Address/Registeration Changed:</label>
+        <input type="date" id="registeration" name="registeration" onchange="calculateReg()" required class="styled-input"><br>
+
+        <label for="DAYS_REGISTRATION">Address/Registeration Change (days):</label>
+        <input type="number" id="DAYS_REGISTRATION" name="DAYS_REGISTRATION" readonly class="styled-input"><br>
+        
+        <label for="identity">Date Identity Document Changed:</label>
+        <input type="date" id="identity" name="identity" onchange="calculateId()" required class="styled-input"><br>
+
+        <label for="DAYS_ID_PUBLISH">Date Identity Document Changed(days):</label>
+        <input type="number" id="DAYS_ID_PUBLISH" name="DAYS_ID_PUBLISH" readonly class="styled-input"><br>
+        
+        <label for="phone">Date Phone Changed:</label>
+        <input type="date" id="phone" name="phone" onchange="calculateph()" required class="styled-input"><br>
+
+        <label for="DAYS_LAST_PHONE_CHANGE">Days phone Change (days):</label>
+        <input type="number" id="DAYS_LAST_PHONE_CHANGE" name="DAYS_LAST_PHONE_CHANGE" readonly class="styled-input"><br>
+        
+        <label for="AMT_REQ_CREDIT_BUREAU_QRT">Number of Inquires Made to Bureau(last 3 months):</label>
+        <input type="number" id="AMT_REQ_CREDIT_BUREAU_QRT" name="AMT_REQ_CREDIT_BUREAU_QRT" required class="styled-input"><br>
+        
+        <label for="CNT_INSTALMENT">No. of Installments in Term(Previous Credit-can vary):</label>
+        <input type="number" id="CNT_INSTALMENT" name="CNT_INSTALMENT" required class="styled-input"><br>
+    
+        <label for="CNT_INSTALMENT_FUTURE">Number of Installments left(previous credit):</label>
         <input type="number" id="CNT_INSTALMENT_FUTURE" name="CNT_INSTALMENT_FUTURE" required class="styled-input"><br>
 
-        <label for="CNT_INSATLMENT">Count Insatllment:</label>
-        <input type="number" id="CNT_INSATLMENT" name="CNT_INSATLMENT" required class="styled-input"><br>
-
-        <label for="MONTHS_BALANCE_Credit_card_balance">MONTHS BALANCE Credit card balance:</label>
-        <input type="number" id="MONTHS_BALANCE_Credit_card_balance" name="MONTHS_BALANCE_Credit_card_balance" required class="styled-input"><br>
-
-        <label for="MONTHS_BALANCE_x">MONTHS BALANCE:</label>
-        <input type="number" id="MONTHS_BALANCE_x" name="MONTHS_BALANCE_x" required class="styled-input"><br>
-        
-
-        
-
         <button type="button" onclick="submitForm()" class="styled-button">Submit</button>
-    </form>
-
-    <form id="loanAmountPredictionForm">
-       <script> 
-        function runLoanAmountPrediction() {
-            fetch('/predictLoanAmount', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({})
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert('Loan amount predicted successfully!');
-                    console.log(data);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        } 
-        </script>
-        <button type="button" onclick="runLoanAmountPrediction()">Predict Loan Amount</button>
-    </form>
+      </form>
+    
 
     <!-- <script src="{{ url_for('static', filename='js/style.js') }}"></script> -->
     <script>
+        // Converting DOB into Number of days.
+        function calculateAge() {
+            // Get the user's input date of birth
+            var dobInput = document.getElementById("dob").value;
+
+            // If the user has not selected a date, do nothing
+            if (!dobInput) {
+                return;
+            }
+
+            // Convert the input date of birth to a Date object
+            var dobDate = new Date(dobInput);
+
+            // Get the current date
+            var currentDate = new Date();
+
+            // Calculate the difference in milliseconds
+            var timeDiff = currentDate - dobDate;
+
+            // Convert milliseconds to days
+            var daysCount = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            // Update the age input field
+            document.getElementById("DAYS_BIRTH").value = daysCount;
+        }
+        // Converting EOD into Number of days.
+        function calculateEmp() {
+            // Get the user's input date of birth
+            var eodInput = document.getElementById("eod").value;
+
+            // If the user has not selected a date, do nothing
+            if (!eodInput) {
+                return;
+            }
+
+            // Convert the input date of birth to a Date object
+            var eodDate = new Date(eodInput);
+
+            // Get the current date
+            var currentDate = new Date();
+
+            // Calculate the difference in milliseconds
+            var timeDiff = currentDate - eodDate;
+
+            // Convert milliseconds to days
+            var daysCount = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            // Update the age input field
+            document.getElementById("DAYS_EMPLOYED").value = daysCount;
+        }
+        // Converting Registration into Number of days.
+        function calculateReg() {
+            // Get the user's input date of birth
+            var regInput = document.getElementById("registeration").value;
+
+            // If the user has not selected a date, do nothing
+            if (!regInput) {
+                return;
+            }
+
+            // Convert the input date of birth to a Date object
+            var regDate = new Date(regInput);
+
+            // Get the current date
+            var currentDate = new Date();
+
+            // Calculate the difference in milliseconds
+            var timeDiff = currentDate - regDate;
+
+            // Convert milliseconds to days
+            var daysCount = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            // Update the age input field
+            document.getElementById("DAYS_REGISTRATION").value = daysCount;
+        }
+        // Converting ID_Changed into Number of days.
+        function calculateId() {
+            // Get the user's input date of birth
+            var idInput = document.getElementById("identity").value;
+
+            // If the user has not selected a date, do nothing
+            if (!idInput) {
+                return;
+            }
+
+            // Convert the input date of birth to a Date object
+            var idDate = new Date(idInput);
+
+            // Get the current date
+            var currentDate = new Date();
+
+            // Calculate the difference in milliseconds
+            var timeDiff = currentDate - idDate;
+
+            // Convert milliseconds to days
+            var daysCount = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            // Update the age input field
+            document.getElementById("DAYS_ID_PUBLISH").value = daysCount;
+        }
+        // Converting phone Changed into Number of days.
+        function calculateph() {
+            // Get the user's input date of birth
+            var phInput = document.getElementById("phone").value;
+
+            // If the user has not selected a date, do nothing
+            if (!phInput) {
+                return;
+            }
+
+            // Convert the input date of birth to a Date object
+            var phDate = new Date(phInput);
+
+            // Get the current date
+            var currentDate = new Date();
+
+            // Calculate the difference in milliseconds
+            var timeDiff = currentDate - phDate;
+
+            // Convert milliseconds to days
+            var daysCount = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            // Update the age input field
+            document.getElementById("DAYS_LAST_PHONE_CHANGE").value = daysCount;
+        }
+        // Form submission
         function submitForm() {
             const formData = {
-                first_name: document.getElementById('first_name').value,
-                last_name: document.getElementById('last_name').value,
-                age: document.getElementById('age').value,
-                email: document.getElementById('email').value,
-                phone_number: document.getElementById('phone_number').value,
-                SK_ID_CURR: document.getElementById('SK_ID_CURR').value,
-                AMT_INCOME_TOTAL: document.getElementById('AMT_INCOME_TOTAL').value,
-                AMT_REQ_CREDIT_BUREAU_YEAR: document.getElementById('AMT_REQ_CREDIT_BUREAU_YEAR').value,
-                OBS_30_CNT_SOCIAL_CIRCLE: document.getElementById('OBS_30_CNT_SOCIAL_CIRCLE').value,
-                OBS_60_CNT_SOCIAL_CIRCLE: document.getElementById('OBS_60_CNT_SOCIAL_CIRCLE').value,
-                AMT_ANNUITY_x: document.getElementById('AMT_ANNUITY_x').value,
-                CNT_INSTALMENT_MATURE_CUM: document.getElementById('CNT_INSTALMENT_MATURE_CUM').value,
-                AMT_PAYMENT: document.getElementById('AMT_PAYMENT').value,
-                DAYS_ENTRY_PAYMENT: document.getElementById('DAYS_ENTRY_PAYMENT').value,
-                AMT_INSTALMENT: document.getElementById('AMT_INSTALMENT').value,
-                DAYS_INSTALMENT: document.getElementById('DAYS_INSTALMENT').value,
-                NUM_INSTALMENT_NUMBER: document.getElementById('NUM_INSTALMENT_NUMBER').value,
-                CNT_INSTALMENT_FUTURE: document.getElementById('CNT_INSTALMENT_FUTURE').value,
-                CNT_INSATLMENT: document.getElementById('CNT_INSATLMENT').value,
-                MONTHS_BALANCE_Credit_card_balance: document.getElementById('MONTHS_BALANCE_Credit_card_balance').value,
-                MONTHS_BALANCE_x: document.getElementById('MONTHS_BALANCE_x').value,
-                CNT_FAM_MEMBERS: document.getElementById('CNT_FAM_MEMBERS').value,
-                OWN_CAR_AGE: document.getElementById('OWN_CAR_AGE').value
-
-                
-            };
-            fetch('/submitData', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert('Data submitted successfully!');
-                    console.log(data);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        }    
-
-  
-   
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        dob: document.getElementById('dob').value,
+        DAYS_BIRTH: document.getElementById('DAYS_BIRTH').value,
+        email: document.getElementById('email').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        address: document.getElementById('address').value,
+        marital_status: document.getElementById('marital_status').value,
+        CNT_FAM_MEMBERS: document.getElementById('CNT_FAM_MEMBERS').value,
+        CNT_CHILDREN: document.getElementById('CNT_CHILDREN').value,
+        AMT_INCOME_TOTAL: document.getElementById('AMT_INCOME_TOTAL').value,
+        AMT_GOODS_PRICE: document.getElementById('AMT_GOODS_PRICE').value,
+        OWN_CAR_AGE: document.getElementById('OWN_CAR_AGE').value,
+        AMT_CREDIT: document.getElementById('AMT_CREDIT').value,
+        AMT_ANNUITY_x: document.getElementById('AMT_ANNUITY_x').value,
+        eod: document.getElementById('eod').value,
+        DAYS_EMPLOYED: document.getElementById('DAYS_EMPLOYED').value,
+        registeration: document.getElementById('registeration').value,
+        DAYS_REGISTRATION: document.getElementById('DAYS_REGISTRATION').value,
+        identity: document.getElementById('identity').value,
+        DAYS_ID_PUBLISH: document.getElementById('DAYS_ID_PUBLISH').value,
+        phone: document.getElementById('phone').value,
+        DAYS_LAST_PHONE_CHANGE: document.getElementById('DAYS_LAST_PHONE_CHANGE').value,
+        AMT_REQ_CREDIT_BUREAU_QRT: document.getElementById('AMT_REQ_CREDIT_BUREAU_QRT').value,
+        CNT_INSTALMENT: document.getElementById('CNT_INSTALMENT').value,
+        CNT_INSTALMENT_FUTURE: document.getElementById('CNT_INSTALMENT_FUTURE').value
+    };
         
-    </script>
-</body>
+        console.log("FormData:", formData);  // Add this line for logging
 
+        fetch('/submitData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Response:", data);  // Add this line for logging
+            // Redirect to /runModel after form submission
+            window.location.href = '/runModel';
+
+            // Reset the form entries
+            document.getElementById('dataForm').reset();
+        })
+        .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+
+</body>
 </html>
