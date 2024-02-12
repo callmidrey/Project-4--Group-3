@@ -148,8 +148,6 @@ def create_table():
             "CNT_INSTALMENT" INTEGER,
             "CNT_INSTALMENT_FUTURE" INTEGER
         );
-            
-            SELECT setval(pg_get_serial_sequence('test_applicant', 'SK_ID_CURR'), 100000, false);
     '''
     conn = connect_to_db()
     cursor = conn.cursor()
@@ -318,23 +316,26 @@ def run_model():
             'AMT_REQ_CREDIT_BUREAU_QRT': [input_data["AMT_REQ_CREDIT_BUREAU_QRT"]]
             })
 
- # Drop feature names before making predictions
-        features = features.values
+        # features for Regressor model
+        features_predict = features
+        # Drop feature names before making predictions
+        features_probab = features
 
         # Assuming 'classifier_model' is a classifier (e.g., RandomForestClassifier)
-        probability_result = classifier_model.predict_proba(features)[:, 1]  # Extract the probability for class 1
+        probability_result = classifier_model.predict_proba(features_probab)[:, 1]  # Extract the probability for class 1
 
         # Calculate the score as 100 - probability_result
         score = 100 - round(probability_result.item() * 100, 2)
 
         # Assuming 'regressor_model' is a regressor (e.g., RandomForestRegressor)
-        regression_result = regressor_model.predict(features)
+        # If the model is a regressor, make sure to use the feature names
+        regression_result = regressor_model.predict(features_predict)
 
         # Round the probability result to two decimal places
         probability_result_rounded = round(probability_result.item(), 2)
 
         # Set predicted amount to $0 if score is less than 50
-        predicted_amount = 0 if score < 50 else regression_result.item() 
+        predicted_amount = 0 if score < 50 else regression_result.item()
 
         if probability_result_rounded < 0.50:
             result_message = f"Congratulations! You are eligible for the loan.\nPredicted Amount: ${predicted_amount:,.2f}\nScore: {score}%"
