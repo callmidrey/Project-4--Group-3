@@ -121,9 +121,24 @@ Similary for prediction of RandomForestRegressor model RMSE of found to be secon
 
 - Hyperparameter tuning.
 
-#### Website Building
+# Website Building
+### Introduction:
+- The website component facilitates user interaction with the predictive model, allowing them to assess the risk probability of loan default. HTML, CSS, and JavaScript are utilized for front-end development. Flask, a Python web framework, connects the front end to the back end, enabling seamless interactions with machine learning models.
 
- 
+### Technologies: 
+- HTML, CSS, JavaScript and Flask.
+
+### Files & Folders:
+HTMLs (template): index.html, form.html, result.html. HTML files are the main structure of the website, including input form, buttons, and placeholders for displaying the results
+CSS (static): index.css, style.css. The CSS files are responsible for styling the website, ensuring a visually appealing and user-friendly design.
+JS (static): script.js, style.js. The javaScript files handle the client-side interactions, sucha as form validation and sending the requests from the front end. It integrates with the machine learning and models to provide predictions.
+
+### Features:
+- Home Page: Has the butoons for the Home, API and a button which takes the user to the form page.
+- Form Page: It has a form where users can input the relevant information such as personal details, financial details that influence the risk assessment.
+- Result Page: When the form is submitted to the database, the data is taken from the database and tested against the model nad displays the results.
+
+
 
 # Results and Discussion
 - Presentation of the model evaluation results.
