@@ -154,8 +154,5 @@ JS (static): script.js, style.js. The javaScript files handle the client-side in
 # References
 - Citation of datasets, libraries, and resources used.
 Data Source: https://www.kaggle.com/c/home-credit-default-risk/data
-# Appendix
-- Additional charts or tables.
-- Any other supplementary materials.
 
 
