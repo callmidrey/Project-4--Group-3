@@ -118,6 +118,7 @@ Similary for prediction of RandomForestRegressor model RMSE of found to be secon
 - Performance metrics (accuracy, precision, recall, F1-score, etc.).
 
 ![Alt text](image-1.png)
+![image](https://github.com/callmidrey/Project-4--Group-3/assets/139001542/3aabe6ad-6d30-4bb1-8ff5-50c652e1b4d9)
 
 - Hyperparameter tuning.
 
