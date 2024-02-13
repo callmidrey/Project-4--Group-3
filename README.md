@@ -139,20 +139,7 @@ JS (static): script.js, style.js. The javaScript files handle the client-side in
 - Result Page: When the form is submitted to the database, the data is taken from the database and tested against the model nad displays the results.
 
 
-
-# Results and Discussion
-- Presentation of the model evaluation results.
-- Interpretation of feature importance.
-- Discussion on the model's performance and limitations.
-- Insights derived from the analysis.
-
-# Conclusion
-- Summary of key findings.
-- Recommendations for future work.
-- Conclusion remarks.
-
 # References
-- Citation of datasets, libraries, and resources used.
 Data Source: https://www.kaggle.com/c/home-credit-default-risk/data
 
 
