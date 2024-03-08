@@ -13,10 +13,10 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Configure PostgreSQL connection
-DB_NAME = 'Project4'
+DB_NAME = 'bank_db'
 DB_USER = 'postgres'
-DB_PASSWORD = 'Subhan786!'
-DB_HOST = '127.0.0.1'
+DB_PASSWORD = 'postgres'
+DB_HOST = 'localhost'
 DB_PORT = '5432'
 
 # Connect to the PostgreSQL database

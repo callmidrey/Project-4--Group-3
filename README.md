@@ -40,13 +40,13 @@ Data contains files:
 - Data obtained from source has categorical data in refined form.e.g. minimal bad entries.
 - However Null values in were filled by putting 0 values in columns where 0 and 1 does not impact our model predictions. since model predictions are binary which can lead to model inaccurate predictions.
  A snapshot of the result is as below indicating a successful handling of missing values<br>
- ![alt text](<Screenshot 2024-02-10 131640.png>)
+ ![alt text](<screenshots/Screenshot 2024-02-10 131640.png>)
  <br>
 
  
 #### Data cleaning and formatting.<br>
 - After Initial cleaning and handling of missing values, CSV files are exported, a schema was created. The schema is illustrared as below:
-![alt text](QuickDBD-export.png)
+![alt text](screenshots/QuickDBD-export.png)
 <br>
 
 
@@ -74,14 +74,14 @@ below is list of APIs:<br>
 ### Categorical Features Analysis Summary
 The categorical Features were examined, and the unique number of levels was obtained.
 Upon analyzing the categorical features in the dataset, several key observations were made summarizig it in the graph below:
-![alt text](image-4.png)
+![alt text](screenshots/image-4.png)
 
 A snapshot of the numerical features analysis is also depicted as below:
-![alt text](image-5.png)
+![alt text](screenshots/image-5.png)
 
 Correlational Analysis of some featues and its heatmap created to show relationship amongst variables
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](screenshots/image-6.png)
+![alt text](screenshots/image-7.png)
 
 # Models and Integration with Front End <br>
 ### Model Selection:
@@ -103,12 +103,12 @@ Similary for prediction of RandomForestRegressor model RMSE of found to be secon
 - Model training and evaluation.
 - Performance metrics (accuracy, precision, recall, F1-score, etc.).
 
-![Alt text](image-2.png)<br>
-![Alt text](https://github.com/callmidrey/Project-4--Group-3/blob/main/r2_score.png)<br>
+![Alt text](screenshots/image-2.png)<br>
+![Alt text](screenshots/r2_score.png)<br>
 - Hyperparameter tuning.
 - Choosing top contributing features in model and testing model accuracy again.
 
-![Alt text](image-3.png)
+![Alt text](screenshots/image-3.png)
 
 
 ### 2. Model prediction
@@ -116,11 +116,9 @@ Similary for prediction of RandomForestRegressor model RMSE of found to be secon
 - Selection of appropriate machine learning algorithms: Random Forest Regressor, XG Boost, Lasso Regression and Neural Network Regression.
 - Model training and evaluation.
 - Performance metrics (accuracy, precision, recall, F1-score, etc.).
-
-![Alt text](image-1.png)
-![image](https://github.com/callmidrey/Project-4--Group-3/assets/139001542/3aabe6ad-6d30-4bb1-8ff5-50c652e1b4d9)
-
 - Hyperparameter tuning.
+
+![Alt text](screenshots/image-1.png)
 
 # Website Building
 ### Introduction:
